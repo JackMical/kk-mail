@@ -1,0 +1,209 @@
+<html lang="en" data-dpr="1" style="font-size: 55.2px;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        html {background: #ffffff;;width:100%;overflow-x: hidden;position:relative;}/* width不能写成width:7rem否则会影响html的font-size值 */
+        body {margin:0;padding:0;color:#000;font-family: PingFangSC-Regular, Verdana, Arial, 微软雅黑;width: 7.5rem;max-width:7.5rem;overflow-x: hidden;height:100%;display:inline-block;}
+        a,img,p {padding: 0;margin: 0;display:inline-block;}
+        img,p {display: block;}
+        li,ul {list-style-type: none;margin:0;padding: 0;}
+        button {border:0;background:transparent;padding:0;margin:0;}
+        input {border:0;}
+
+        .content {width: 6.7rem;margin-left: .4rem;padding-top: .4rem;height: 100%;display: inline-block;margin-bottom: 1.19rem;}
+        .header-box {display: inline-block;}
+        .header-box img{width: 100%;border-radius: 10px;}
+        .header-left {width: 1.76rem;height: 2.42rem;box-shadow: 0px 3px 15px rgba(51,51,51,.3);float: left;display: block;}
+        .header-left img {width: 1.76rem;height: 2.42rem;}
+        .header-right {display:inline-block;margin-left:0.4rem;width: 4.54rem;}
+        .novel-name {color: #1e2226;font-size:0.34rem;margin-top: 0.16rem;line-height: 0.4rem;}
+        .novel-author-box {margin-top: 0.26rem;}
+        .novel-author-box span {height: 0.54rem;padding:0 .3rem;display:inline-block;line-height: 0.54rem;background: #f5f5f5;border-radius:.27rem;color: #6f6f70;}
+        .novel-label-box {color: #999;font-size: 0.22rem;margin-top: 0.25rem;}
+        .novel-label-box span {}
+        #introduce {color: #999;font-size: 0.28rem;margin-top: 0.6rem;line-height: 0.48rem;position: relative;}
+        .novel-title {color: #1e2226;font-size: 0.32rem;font-weight: bold;margin-top: 0.55rem;}
+        .novel-content {font-size: 0.32rem;color: #4b4c4f;line-height: 0.55rem;margin-top: 0.57rem;}
+        .novel-content p {margin-top: 0.47rem;}
+        .novel-content p:first-child {margin-top: 0;}
+        .continue_reading {color: #1878f3;font-size: 0.34rem;width: 3.6rem;height: 0.88rem;line-height: 0.9rem;border-radius: .44rem;border:.024rem solid #1878f3;display: block;margin:.7rem auto;}
+        .hot_list {}
+        .hot_list li {width: 1.76rem;float: left;margin-top: 0.4rem;margin-left: 0.7rem;height: 3.8rem;}
+        .hot_list li:first-child {margin-left: 0;}
+        .hot_list li a { text-decoration: none;}
+        .hot_list li img {width:1.76rem;height:2.42rem;}
+        .hot_list li text {margin-top: 0.23rem;display: block;color: #1e2226;font-size: 0.24rem;}
+        .introduce_a {position: absolute;right:0;bottom:0;background:#fff url(/static/share/images/download_app_arrow.svg) no-repeat center right;background-size: .21rem .16rem;padding:0 .3rem;color:#1878f3;}
+        .change_a {background:#fff url(/static/share/images/download_app_arrow2.svg) no-repeat center right;background-size: .21rem .16rem;}
+        .hot_list li text,.novel-name {overflow:hidden;
+
+            text-overflow:ellipsis;
+
+            display:-webkit-box;
+
+            -webkit-box-orient:vertical;
+
+            -webkit-line-clamp:2;}
+        #s {-webkit-line-clamp:3;}
+
+        /*下载*/
+        .download_app {width:7.5rem;height: 1.19rem;background: #424243;position: fixed;left:0;bottom:0;z-index: 1000;}
+        .content_box {width:7.02rem;margin-left: .24rem;height:0.77rem;margin-top: .21rem;}
+        .logo_img {width: .77rem;height: .77rem;float: left;}
+        .logo_text {float: left;margin-left: .26rem;}
+        .logo_text text {display: block;}
+        .logo_text text:first-child {color:#fff;font-size: 0.34rem;}
+        .logo_text text:last-child {color:#b0b0b0;font-size: .26rem;}
+        .download_btn {height: .7rem;background:#1878f3;border-radius: .35rem;color: #fff;font-size:.28rem;float: right;padding:0 .34rem;margin-top: .035rem;}
+
+    </style>
+    <title>...</title>
+    <script>
+        myscale();
+        function myscale(){
+            !function (a, b) {
+                function c() {
+                    var b = f.getBoundingClientRect().width;
+                    b / i > 540 && (b = 540 * i);
+                    var c = b / 7.5;
+                    f.style.fontSize = c + "px", k.rem = a.rem = c
+                }
+
+                var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'),
+                    i = 0, j = 0, k = b.flexible || (b.flexible = {});
+                if (g) {
+                    console.warn("将根据已有的meta标签来设置缩放比例");
+                    var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                    l && (j = parseFloat(l[1]), i = parseInt(1 / j));
+                } else if (h) {
+                    var m = h.getAttribute("content");
+                    if (m) {
+                        var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/);
+                        n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                    }
+                }
+                if (!i && !j) {
+                    var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio;
+                    i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+                }
+                if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + 1 + ", maximum-scale=" + 1 + ", minimum-scale=" + 1 + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else {
+                    var r = e.createElement("div");
+                    r.appendChild(g), e.write(r.innerHTML)
+                }
+                a.addEventListener("resize", function () {
+                    clearTimeout(d), d = setTimeout(c, 300)
+                }, !1), a.addEventListener("pageshow", function (a) {
+                    a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+                }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () {
+                    e.body.style.fontSize = 12 * i + "px"
+                }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) {
+                    var b = parseFloat(a) * this.rem;
+                    return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+                }, k.px2rem = function (a) {
+                    var b = parseFloat(a) / this.rem;
+                    return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+                }
+            }(window, window.lib || (window.lib = {}));
+        }
+
+
+
+    </script>
+</head>
+<body style="font-size: 12px;">
+
+<div class="content">
+    <h2>There was no wedding, no groom, and she married an old man instead of her stepsister...</h2>
+    <div class="header-box">
+        <img src="https://1.bp.blogspot.com/-Sz1fHS_M2Iw/YH1PGXmzTcI/AAAAAAAAAAg/AAySKbKlikQ5lzxkMh7Z3AB0EVOL0DWRwCLcBGAsYHQ/photo_2021-04-19_17-24-01.jpg">
+    </div>
+    
+    <div class="novel-content-box">
+
+        <div class="novel-content">
+            <p>     Summer sat in front of the vanity mirror and waited for the makeup artist to apply her makeup. Suddenly, the door opened, and her mother, Karen, hurried in. She saw Summer's messy hair and her long gray jacket that went with the gray look on her face. She looked angry. "The Emersons are here. Why have you not changed your clothes?"</p>
+            <p>     Summer pushed the black-rimmed glasses on the bridge of her nose and looked dumbfounded. "Mom, do you really want me to marry my sister's fiancé?"</p>
+            <p>     Karen thought she was making a big mistake doing this, and her face turned white with anxiety. The Emersons were waiting outside, and a simple mistake could destroy her whole family!</p>
+            <p>     She knelt in front of Summer and anxiously said, "Summer, I beg you. Your sister deserves better, why don't you just help her!"</p>
+            <p>     Summer's hopeless eyes gradually became cold. Although Karen was her biological mother, she had favored the children of her father's deceased ex-wife. Karen knew that Summer's sister's fiancé was ugly and impotent, but she wanted Summer to marry him anyway.</p>
+            <p>     The servant's pleadings could be heard outside the door, "Madam, the Emersons are upstairs."</p>
+            <p>     Summer didn't reach out to help Karen, indifferently saying, "Get up, I'll go."</p>
+            <p>     This time, she really has lost her all to this family.</p>
+            <p>     Opening the door, she saw a group of strange bodyguards standing outside the door.</p>
+            <p>     These were the people the Emersons sent to pick her up.</p>
+            <p>     She is going to marry someone today without a wedding or a groom. "Come on." She walked ahead and went downstairs first.</p>
+            <p>     The Emersons were the richest family in Huyang city. The only heir, Leonardo, was disfigured and was impotent after he was kidnapped more than ten years ago.</p>
+            <p>     Since then, he has not appeared in public. He was rumored to be brutal and ugly, and no woman sent into his house came out alive.</p>
+            <p>     There is no greater sorrow than heartbreak caused by the betrayal of your family. Even if he is a devil, it does not matter. Her mother has abandoned her to this monster; Summer was completely alone in this world.</p>
+            <p>     ...</p>
+            <p>     Arriving at Leonardo's villa, the bodyguards took her into the room, and they all left.</p>
+            <p>     It wasn't until the sky outside the window was getting dark that the door was opened again.</p>
+            <p>     Summer turned her head and saw a tall and strong man walk in from the door.</p>
+            <p>     He closed the door and turned on the light.</p>
+            <p>     Summer outstretched her hand to block the blinding light. Then she raised her head to see the man in front of her.</p>
+            <p>     At a glance, she froze.</p>
+            <p>     It wasn't because the man was ugly and terrifying, on the contrary. He was incredibly handsome.</p>
+            <p>     A dark suit wrapped around his tall, muscular body. His pair of long legs strode towards her confidently.</p>
+            <p>     His facial contour was deep and perfect, like an exquisite work of art.</p>
+            <p>     Leonardo looked at Summer for a few seconds, his eyebrows twisted slightly. "Ugly."</p>
+            <p>     He said this with a calm tone, no extra emotions could be discerned from his voice.</p>
+            <p>     Summer looked back in shock. She didn't care much about him saying she was ugly, she only looked at him with a look of defiance and said, "Who are you?"</p>
+            <p>     His ink-colored pupil radiated a harsh light, and his voice was deep. "You don't know who you'll marry?"</p>
+            <p>     As he got close, his brisk breath sent a shiver down Summer's spine.</p>
+            <p>     His powerful aura stifled her slightly, but she still straightened her back. "Of course, I know the person I'll marry is named Leonardo!"</p>
+            <p>     Leonardo heard the words. The sharpness in his eyes gradually converged, and then flashed a trace of clarity. Another woman who believed the rumors. Destined to marry an 'ugly and impotent' man, her expression seemed too calm. He became interested in her.</p>
+            <p>     He smiled, acting calm and collected he said, "So you are my sister-in-law? I am Douglas, the cousin of Leonardo. I guess at the wedding night, nobody wants to be with such a waste of a man, not even you!"</p>
+            
+            
+        </div>
+        <button class="continue_reading" onclick="goto('http://m.likereader.net/spread/index?id=146')">Continue</button>
+        <br>
+        <br>
+    </div>
+            
+    </div>
+
+
+<script>
+    function goto(url) {
+        var a = document.createElement("a");
+        a.setAttribute("href", url);
+        a.setAttribute('rel','noreferrer noopener nofollow');
+        a.style.display = "none";
+        document.body.appendChild(a);
+        a.click();
+    }
+
+    isIPhoneX();
+
+    function isIPhoneX(fn){
+        var u = navigator.userAgent;
+        var isIOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+        if (isIOS) {
+            if (screen.height >= 812 && screen.width == 375){
+                //console.log('iponeX')
+                document.getElementsByClassName("download_app")[0].style.height = "1.7rem";
+            }else{
+                //console.log('ipone')
+            }
+        }else{
+            //console.log('安卓')
+        }
+    }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R95GJTJ7DH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R95GJTJ7DH');
+
+  history.pushState(null,null,'#');
+  window.onhashchange = function(){
+      goto('https://book.zgjzlp.bar/v2/show#1618831793404');
+  }
+</script>
+</body></html>
